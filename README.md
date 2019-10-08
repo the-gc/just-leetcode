@@ -1,0 +1,2 @@
+# just-leetcode
+leetcode note
