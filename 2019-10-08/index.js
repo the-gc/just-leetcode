@@ -41,3 +41,23 @@ function backTrack (str, fibList, templist, st) {
         }
     }
 }
+
+
+// 有效括号的嵌套深度
+var maxDepthAfterSplit = function (seq) {
+    let deep = 0;
+    let arr = new Array(seq.length);
+    let max = 0;
+    for (let i = 0; i < seq.length; i++) {
+        if (seq[i] === "(") {
+            deep++;
+        }
+        arr[i] = deep;
+        max = Math.max(max, deep);
+        if (seq[i] === ')') {
+            deep--;
+        }
+    }
+    let mid = max / 2;
+    return arr.map(item => item > mid ? 1 : 0);
+};
